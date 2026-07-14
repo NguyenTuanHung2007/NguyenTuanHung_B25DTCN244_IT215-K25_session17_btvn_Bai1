@@ -13,5 +13,3 @@ def get_package(package_id: int, db: Session = Depends(get_db)):
 @app.post("/packages", response_model=schemas.PackageResponse, status_code=201)
 def create_package(package_data: schemas.PackageBase, db: Session = Depends(get_db)):
     return services.create_package_service(db, package_data)
-
-# Có thể thêm các API cho Warehouse, Waybill, Truck tương tự
